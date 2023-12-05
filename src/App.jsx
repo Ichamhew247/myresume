@@ -1,14 +1,15 @@
+import { AuthProvider } from "./context/AuthContext";
 import { TodoProvider } from "./context/TodoContext";
-import Homepage from "./pages/Homepage";
-// import Signup from "./pages/Signup";
+import Router from "./routes/Router";
 
 function App() {
   return (
     <>
-      <TodoProvider>
-        {/* <Signup /> */}
-        <Homepage />
-      </TodoProvider>
+      <AuthProvider>
+        <TodoProvider>
+          <Router />
+        </TodoProvider>
+      </AuthProvider>
     </>
   );
 }
